@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Navigator Demo</title>
+    <script src="../dist/spa-navigator.min.js"></script>
+    <script>
+        window.onload = function () {
+
+            window.spa = new SPANavigator({
+                pages: ["home", "about", "contact"],
+                defaultPage: "home"
+            });
+        };
+    </script>
+    <style>
+        /* Style to hide all pages by default */
+        .page { display: none; min-height: 60vh;  }
+        #home { display: block; }
+
+        /* Layout styles */
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+        header, footer { background: #333; color: white; padding: 15px; }
+        nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        #content { padding: 20px; }
+       
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Static Header -->
+    <header>
+        <h1>SPA Navigator Demo</h1>
+        <nav>
+            <a href="javascript:void(0)" onclick="spa.showPage('home')">Home</a>
+            <a href="javascript:void(0)" onclick="spa.showPage('about')">About</a>
+            <a href="javascript:void(0)" onclick="spa.showPage('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ✅ Dynamic Content -->
+    <div id="content">
+        <section id="home" class="page">
+            <h1>🏡 Welcome to Our Home Page!</h1>
+            <p>
+                Welcome to <strong>SPA Navigator</strong>, where seamless navigation meets simplicity. 
+                Our goal is to provide an efficient and user-friendly experience for navigating 
+                single-page applications without unnecessary complexity.
+            </p>
+        
+            <h2>🌟 Why Choose Us?</h2>
+            <ul>
+                <li><strong>Effortless Navigation</strong> – Instantly switch between pages without reloading.</li>
+                <li><strong>Fast & Responsive</strong> – Optimized for smooth transitions.</li>
+                <li><strong>Lightweight & Simple</strong> – No heavy frameworks, just pure JavaScript.</li>
+            </ul>
+        
+            <p>
+                🚀 Whether you're a developer building a modern web app or a user looking for a 
+                seamless browsing experience, <strong>SPA Navigator</strong> ensures smooth page 
+                transitions with minimal effort. Explore our <a href="javascript:void(0)" onclick="spa.showPage('about')">About</a> 
+                and <a href="javascript:void(0)" onclick="spa.showPage('contact')">Contact</a> pages to learn more!
+            </p>
+        
+            <p><em>Thank you for visiting! 😊</em></p> 
+        </section>
+        
+
+        <section id="about" class="page">
+            <h1>📖 About Us</h1>
+            <p>
+                Welcome to <strong>SPA Navigator</strong>! We are dedicated to making web navigation 
+                smooth and hassle-free. Our mission is to create lightweight, efficient solutions 
+                for single-page applications.
+            </p>
+        
+            <h2>🌍 What We Do</h2>
+            <p>
+                We provide a simple and flexible way to navigate between pages in a single-page 
+                application, ensuring a seamless user experience without unnecessary page reloads.
+            </p>
+        
+            <h2>🔗 Our Vision</h2>
+            <p>
+                Our goal is to empower developers and users with fast, interactive, and 
+                intuitive navigation for modern web applications.
+            </p>
+        
+            <p>💡 Want to get in touch? Visit our <a href="javascript:void(0)" onclick="spa.showPage('contact')">Contact Page</a>!</p>
+        </section>
+        
+        <section id="contact" class="page">
+            <h1>📩 Contact Us</h1>
+            <p>
+                Have questions or need support? We’d love to hear from you! Feel free to reach 
+                out to us through the following channels.
+            </p>
+        
+            <h2>📧 Email</h2>
+            <p><a href="mailto:notjustdevs@gmail.com">notjustdevs@gmail.com</a></p>
+        
+            <h2>📍 Office Location</h2>
+            <p>Owerri, Imo State, Nigeria</p>
+        
+            <h2>📞 Phone</h2>
+            <p>+234 ** **** ****</p>
+        
+            <h2>💬 Social Media</h2>
+            
+        
+            <p>🏡 Return to the <a href="javascript:void(0)" onclick="spa.showPage('home')">Home Page</a></p>
+        </section>
+
+        
+    </div>
+
+    <!-- ✅ Static Footer -->
+    <footer>
+        <p>&copy; 2025 SPA Navigator. All Rights Reserved. <strong>Terence Onyeweke</strong></p>
+    </footer>
+
+</body>
+</html>
